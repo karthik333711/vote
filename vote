@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classroom Voting</title>
+    <style>
+        /* Add some basic styling here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+        }
+        .option {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classroom Voting</h1>
+    
+    <div class="question">
+        <p>What is your favorite programming language?</p>
+    </div>
+    
+    <div class="options">
+        <div class="option" onclick="vote('Python')">Python</div>
+        <div class="option" onclick="vote('JavaScript')">JavaScript</div>
+        <div class="option" onclick="vote('Java')">Java</div>
+        <div class="option" onclick="vote('C++')">C++</div>
+    </div>
+    
+    <div id="result">
+        <p>Results:</p>
+        <ul id="voteResults">
+            <!-- Voting results will be displayed here -->
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript function to handle voting
+        function vote(language) {
+            // You can send the selected option to your server or handle it as needed
+            // For simplicity, we'll just update the results here
+            const voteResults = document.getElementById('voteResults');
+            const listItem = document.createElement('li');
+            listItem.textContent = language;
+            voteResults.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
